@@ -160,7 +160,6 @@ class PostGenProjectHook(object):
         self.git_email = self.result.get("git_email")
         self.git_ignore = self.result.get("git_ignore")
         self.git_name = self.result.get("git_name")
-        self.make_dirs = self.result.get("make_dirs")
         self.remote_namespace = self.result.get("remote_namespace")
         self.remote_protocol = self.result.get("remote_protocol")
         self.remote_provider = str(self.result.get("remote_provider")).lower()
@@ -182,11 +181,6 @@ class PostGenProjectHook(object):
         self.password_prompt = self.password_prompt_base.format(
             self.remote_username, self.remote_provider
         )
-        self.project_dirpaths = [
-            os.path.join(self.repo_dirpath, dirname.strip())
-            for dirname in self.make_dirs.split(",")
-            if dirname.strip()
-        ]
         self.remote_data = {
             "name": self.repo_slug,
             "description": self.repo_tagline,
@@ -414,23 +408,6 @@ class PostGenProjectHook(object):
         if not self.remote_provider == "github.com":
             shutil.rmtree(self.github_dirpath, ignore_errors=True)
 
-    def _make_dirs(self):
-        """
-        Makes dirs and adds .gitkeep files to them.
-        """
-        for dirpath in self.project_dirpaths:
-            # equal to bash `mkdir -p $dirpath`
-            try:
-                os.makedirs(dirpath)
-            except OSError as exc:
-                if exc.errno == errno.EEXIST and os.path.isdir(dirpath):
-                    pass
-                else:
-                    raise
-            # equal to bash `touch $dirpath/.gitkeep`
-            gitkeep = os.path.join(dirpath, ".gitkeep")
-            with open(gitkeep, "a"):
-                os.utime(gitkeep, None)
 
     def _copyright_license(self):
         """
@@ -473,7 +450,6 @@ class PostGenProjectHook(object):
         """
         self._handle_manifest_resources()
         self._copyright_license()
-        self._make_dirs()
         self._github_dir()
         self._git_repo()
         print(self.success_message)
