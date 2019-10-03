@@ -1,0 +1,9 @@
+{
+    "full_name": "Your full name here",
+    "email": "you@example.com",
+    "project_name": "Summernote WYSWIG Editor",
+    "project_slug": "{{cookiecutter.project_name.lower().replace(' ', '_')}}",
+    "project_short_description": "Implementation of the Summernote WYSWIG for contentful Text and Symbol Field types.",
+    "version": "0.1.0",
+    "mathematics": [true,false]
+}

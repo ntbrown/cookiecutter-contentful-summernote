@@ -1,0 +1,5 @@
+features:
+  - name: mathematics
+    enabled: {{cookiecutter.mathematics|lower}}
+    resources:
+      - {{cookiecutter.project_slug}}/src/summernote.math.js

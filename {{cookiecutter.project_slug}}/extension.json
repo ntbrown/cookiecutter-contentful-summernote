@@ -1,0 +1,9 @@
+{
+  "id": "{{cookiecutter.project_name}}",
+  "name": "{{cookiecutter.project_name}}",
+  "srcdoc": "./build/index.html",
+  "fieldTypes": [
+    "Symbol",
+    "Text"
+  ]
+}
