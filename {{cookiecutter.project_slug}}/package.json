@@ -1,7 +1,8 @@
 {
-  "name": "{{ cookiecutter.project_name }}",
+  "name": "{{ {{ cookiecutter.project_name.lower().replace(' ', '_') }} }}",
   "version": "{{ cookiecutter.version }}",
   "description": "{{ cookiecutter.project_short_description }}",
+  "author": "{{ cookiecutter.full_name }} <{{ cookiecutter.email }}>",
   "private": true,
   "scripts": {
     "start": "contentful-extension-scripts start",
