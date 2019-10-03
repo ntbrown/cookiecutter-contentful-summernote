@@ -433,7 +433,7 @@ class PostGenProjectHook(object):
         self._delete_resource(MANIFEST)
 
 
-    def _delete_resource(resource):
+    def _delete_resource(self, resource):
         """
         Delete a specific resource from the cookiecutter project.
         """
