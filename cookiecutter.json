@@ -31,5 +31,5 @@
         "MPL-2.0",
         "Unlicense"
     ],
-    "copyright_holder": "{{ cookiecutter.git_name }}",
+    "copyright_holder": "{{ cookiecutter.git_name }}"
 }
