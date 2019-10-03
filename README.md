@@ -48,36 +48,9 @@ Now run it against this repo::
 
 ## Usage
 
-You'll be prompted for some questions, answer them, then it will create a directory that is your new package.
+You'll be prompted for some questions, answer them, then it will create a directory that is your new package and push it upstream to your version control provider.
 
-**Warning**: After this point, please enter your own information as this information will be used to replace the placeholders contained within the cookiecutter template(s).
-
-It prompts you for information that it uses to create the app, with defaults in square brackets. Answer them::
-
-    full_name [Your full name here]: MyName
-    email [you@example.com]: my@email.com
-    github_username [yourname]: MyUsername
-    project_name [Summernote WYSWIG Editor]:
-    project_slug [summernote_wyswig_editor]:
-    project_short_description [Implementation of the Summernote WYSWIG for contentful Text and Symbol Field types.]:
-    version [0.1.0]:
-    Select mathematics:
-    1 - true
-    2 - false
-    Choose from 1, 2 [1]:
-
-Enter the project and take a look around::
-
-    $ cd summernote_wyswig_editor/
-    $ ls
-
-Create a GitHub repo and push it there::
-
-    $ git init
-    $ git add .
-    $ git commit -m "first awesome commit"
-    $ git remote add origin git@github.com:ntbrown/summernote_wyswig_editor.git
-    $ git push -u origin master
+**Warning**: Please enter your own information as this information will be used to replace the placeholders contained within the cookiecutter template(s).
 
 Now take a look at your repo. Awesome, right?
 
